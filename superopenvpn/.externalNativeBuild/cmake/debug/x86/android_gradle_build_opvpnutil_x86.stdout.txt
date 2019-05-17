@@ -1,0 +1,3 @@
+[1/3] cd /Users/itsvekus/Documents/Vinditek/safejumper-android/superopenvpn/.externalNativeBuild/cmake/debug/x86 && /Users/itsvekus/Library/Android/sdk/cmake/3.6.4111459/bin/cmake -E make_directory /Users/itsvekus/Documents/Vinditek/safejumper-android/superopenvpn/src/main/cpp/../../../build/ovpnassets
+[2/3] Linking C executable pie_openvpn.x86
+[3/3] Linking C executable nopie_openvpn.x86

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/popupContainerBackground"
+    android:fitsSystemWindows="false"
+    tools:ignore="MissingPrefix">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/buttonsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/mainWhite"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/appLogs"
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/mainColor"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@string/appLogs"
+                android:textColor="@color/mainWhite"/>
+
+            <TextView
+                android:id="@+id/vpnLogs"
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/switchGray"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@string/vpnLogs"
+                android:textColor="@color/mainWhite"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/logsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/copyLogs"
+        android:layout_below="@+id/buttonsContainer"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/mainWhite"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/copyLogs">
+
+            <TextView
+                android:id="@+id/logsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="8dp"
+                android:text="@string/noLogs"
+                android:textSize="12sp"/>
+
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/copyLogs"
+        style="@style/AppButton"
+        fontPath="fonts/roboto_bold.ttf"
+        android:layout_above="@+id/close"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/mainColor"
+        android:text="@string/copyToClipboard"
+        android:textColor="@color/mainWhite"/>
+
+    <Button
+        android:id="@+id/close"
+        style="@style/AppButton"
+        fontPath="fonts/roboto_bold.ttf"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/hintColor"
+        android:text="@string/cancel"
+        android:textColor="@color/mainWhite"/>
+
+
+</RelativeLayout>

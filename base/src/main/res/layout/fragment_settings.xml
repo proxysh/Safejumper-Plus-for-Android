@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/mainColor"
+        android:elevation="10dp">
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_back"
+            android:tint="@color/mainWhite"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/infoIcon"
+            android:layout_toEndOf="@+id/backIcon"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/connectedTitleIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_lock_unlock"
+                android:layout_marginEnd="10dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/titleBarText"
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/settingsTitle"
+                android:textColor="@color/mainWhite"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/infoIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_info"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="-5dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/accountDetails"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"/>
+
+                        <ImageView
+                            android:padding="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:src="@drawable/ic_profile"
+                            android:tint="@color/mainColor"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/popupBackground"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/emailTitle"
+                            fontPath="fonts/roboto_black.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/email"
+                            android:textAllCaps="true"
+                            android:textColor="@color/popupText"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/emailText"
+                            fontPath="fonts/roboto_medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/emailTitle"
+                            android:gravity="end"
+                            tools:text="antony@gmail.com"
+                            android:textColor="@color/mainBlack"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/popupBackground"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/planTitle"
+                            fontPath="fonts/roboto_black.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/plan"
+                            android:textAllCaps="true"
+                            android:textColor="@color/popupText"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/planText"
+                            fontPath="fonts/roboto_medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/planTitle"
+                            android:gravity="end"
+                            tools:text="Starter Pack"
+                            android:textColor="@color/mainBlack"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/popupBackground"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="13dp">
+
+                        <TextView
+                            android:id="@+id/expirationTitle"
+                            fontPath="fonts/roboto_black.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/expiration"
+                            android:textAllCaps="true"
+                            android:textColor="@color/popupText"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/expirationText"
+                            fontPath="fonts/roboto_medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/expirationTitle"
+                            android:gravity="end"
+                            tools:text="May 24, 2020"
+                            android:textColor="@color/mainBlack"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/manageYourAccountButton"
+                style="@style/AppButton"
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/background_button_bottom_rounded"
+                android:backgroundTint="@color/buttonGreen"
+                android:text="@string/manageYourAccount"
+                android:textColor="@color/mainWhite"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/killSwitchContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/killSwitch"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:thumbTint="@color/mainWhite"
+                            android:id="@+id/killInternetSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        fontPath="fonts/roboto_regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/killSwitchText"
+                        android:textColor="@color/popupText"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/autoConnectOnPublicWiFiContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/autoConnect"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:thumbTint="@color/mainWhite"
+                            android:id="@+id/autoConnectSwitchOnPublicWiFi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        fontPath="fonts/roboto_regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/autoConnectText"
+                        android:textColor="@color/popupText"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/defaultDNSContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/defaultDNS"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"/>
+
+                        <ImageView
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:id="@+id/editDefaultDNS"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_edit"
+                            android:tint="@drawable/selector_main_color_darker_text"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/popupBackground"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/primaryTitle"
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/primary"
+                            android:textAllCaps="true"
+                            android:textColor="@color/popupText"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/primaryDNSText"
+                            fontPath="fonts/roboto_medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/primaryTitle"
+                            android:gravity="end"
+                            android:text="8.8.8.8"
+                            android:textColor="@color/mainBlack"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/popupBackground"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/secondaryTitle"
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/secondary"
+                            android:textAllCaps="true"
+                            android:textColor="@color/popupText"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/secondaryDNSText"
+                            fontPath="fonts/roboto_medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/secondaryTitle"
+                            android:gravity="end"
+                            android:text="8.8.4.4"
+                            android:textColor="@color/mainBlack"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/defaultEncryptionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/encryptionType"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"/>
+
+                        <ImageView
+                            android:padding="5dp"
+                            android:id="@+id/editEncryptionType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_edit"
+                            android:tint="@drawable/selector_main_color_darker_text"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/popupBackground"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/encryptionTitle"
+                            fontPath="fonts/roboto_medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/openVPN"
+                            android:textColor="@color/mainBlack"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/encryptionValue"
+                            fontPath="fonts/roboto_black.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/encryptionTitle"
+                            android:gravity="end"
+                            tools:text="5 Options Available"
+                            android:textAllCaps="true"
+                            android:textColor="@color/popupText"
+                            android:textSize="12sp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/autoConnectOnLaunchContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/autoConnectOnLaunch"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:thumbTint="@color/mainWhite"
+                            android:id="@+id/autoConnectOnLaunchSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        fontPath="fonts/roboto_regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/autoConnectOnLaunchText"
+                        android:textColor="@color/popupText"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/displayAllServersContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/displayAllServers"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"/>
+
+                        <Switch
+                            android:thumbTint="@color/mainWhite"
+                            android:id="@+id/displayAllServersSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        fontPath="fonts/roboto_regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/displayAllServersText"
+                        android:textColor="@color/popupText"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/logoutContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@drawable/selector_main_color_darker_text"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp">
+
+                        <ImageView
+                            android:id="@+id/loginLogoutImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_logout_login"/>
+
+                        <TextView
+                            fontPath="fonts/roboto_bold.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/loginLogoutImage"
+                            android:text="@string/logout"
+                            android:textColor="@color/mainWhite"
+                            android:textSize="16sp"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        fontPath="fonts/roboto_regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/logoutText"
+                        android:textColor="@color/mainWhite"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

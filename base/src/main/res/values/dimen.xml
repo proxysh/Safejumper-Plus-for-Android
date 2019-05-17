@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="viewPagerIndicatorMargin">10dp</dimen>
+    <dimen name="viewPagerIndicatorSize">12dp</dimen>
+    <dimen name="toggleButton">12sp</dimen>
+    <dimen name="editText">5dp</dimen>
+    <dimen name="loginInputContainerHeight">56dp</dimen>
+    <dimen name="dialogItemHeight">48dp</dimen>
+    <dimen name="dialogItemBottomMargin">8dp</dimen>
+    <dimen name="dialogItemStartEndMargin">5dp</dimen>
+    <dimen name="dialogItemElevation">3dp</dimen>
+    <dimen name="dialogItemTextPadding">32dp</dimen>
+
+</resources>

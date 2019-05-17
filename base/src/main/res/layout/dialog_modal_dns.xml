@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/popupContainerBackground"
+    android:fitsSystemWindows="false"
+    tools:ignore="MissingPrefix">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/messageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="24dp"
+        app:cardBackgroundColor="@color/popupBackground"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPaddingBottom="16dp"
+        app:contentPaddingLeft="8dp"
+        app:contentPaddingRight="8dp"
+        app:contentPaddingTop="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defaultDNS"
+                android:textColor="@color/mainColor"
+                android:textSize="20sp"/>
+
+            <TextView
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/dnsPopupMessage"
+                android:textColor="@color/popupText"
+                android:textSize="16sp"/>
+
+            <android.support.v7.widget.CardView
+                style="@style/LoginInputContainer"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/defaultDNSTextInputLayout"
+                    style="@style/LoginTextInputLayout"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/primaryDNSTextInputEditText"
+                        style="@style/LoginTextInputEditText"
+                        fontPath="fonts/roboto_medium.ttf"
+                        android:maxLength="15"
+                        android:hint="@string/primaryDNS"
+                        android:inputType="numberDecimal"
+                        android:digits="0123456789."
+                        android:nextFocusDown="@id/secondaryDNSTextInputEditText"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                style="@style/LoginInputContainer"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:cardBackgroundColor="@color/mainWhite"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/secondaryDNSTextInputLayout"
+                    style="@style/LoginTextInputLayout"
+                    app:hintTextAppearance="@style/HintText">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/secondaryDNSTextInputEditText"
+                        style="@style/LoginTextInputEditText"
+                        fontPath="fonts/roboto_medium.ttf"
+                        android:hint="@string/secondaryDNS"
+                        android:inputType="numberDecimal"
+                        android:digits="0123456789."
+                        android:maxLength="15"
+                        android:imeOptions="actionDone"/>
+
+
+                </android.support.design.widget.TextInputLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <Button
+                    android:id="@+id/save"
+                    style="@style/AppButton"
+                    fontPath="fonts/roboto_bold.ttf"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="50"
+                    android:backgroundTint="@color/buttonGreen"
+                    android:text="@string/save"
+                    android:textColor="@color/mainWhite"/>
+
+                <Button
+                    android:id="@+id/cancel"
+                    style="@style/AppButton"
+                    fontPath="fonts/roboto_bold.ttf"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="50"
+                    android:backgroundTint="@color/hintColor"
+                    android:text="@string/cancel"
+                    android:textColor="@color/mainWhite"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

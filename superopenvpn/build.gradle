@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'checkstyle'
+checkstyle {
+    showViolations true
+}
+
+
+def openvpn3SwigFiles = new File(buildDir, "generated/source/ovpn3swig/ovpn3")
+
+task("generateOpenVPN3Swig", type: Exec) {
+    def swigcmd = "swig"
+    // Workaround for Mac OS X since it otherwise does not find swig and I cannot get
+    // the Exec task to respect the PATH environment :(
+    if (file("/usr/local/bin/swig").exists())
+        swigcmd = "/usr/local/bin/swig"
+
+    doFirst {
+        mkdir openvpn3SwigFiles
+    }
+    commandLine swigcmd, "-outdir", openvpn3SwigFiles, "-outcurrentdir", "-c++", "-java", "-package", "net.openvpn.ovpn3",
+            "-Isrc/main/cpp/openvpn3/client", "-Isrc/main/cpp/openvpn3/",
+            "-o", "${openvpn3SwigFiles}/ovpncli_wrap.cxx", "-oh", "${openvpn3SwigFiles}/ovpncli_wrap.h",
+            "src/main/cpp/openvpn3/javacli/ovpncli.i"
+}
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_TOOLCHAIN=clang',
+                        '-DANDROID_STL=c++_static'
+            }
+        }
+
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', 'build/ovpnassets']
+            java.srcDirs = ["src/ovpn3/java/", openvpn3SwigFiles]
+        }
+    }
+
+    publishNonDefault true
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+
+}
+
+// Ensure native build is run before assets, so assets are ready to be merged into the apk
+android.libraryVariants.all { variant ->
+    variant.getMergeAssets().dependsOn(variant.getExternalNativeBuildTasks())
+    variant.getJavaCompile().dependsOn(generateOpenVPN3Swig)
+}

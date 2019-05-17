@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/mainColor"
+        android:elevation="10dp">
+
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_menu"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/settingsIcon"
+            android:layout_toEndOf="@+id/menuIcon"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/connectedTitleIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_lock_unlock"/>
+
+            <TextView
+                android:id="@+id/titleBarText"
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="@string/stateNotConnectedText"
+                android:textColor="@color/mainWhite"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/settingsIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_settings"/>
+
+    </RelativeLayout>
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/slidingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        app:umanoDragView="@+id/slidingContainer"
+        app:umanoOverlay="true"
+        app:umanoPanelHeight="247dp"
+        app:umanoParallaxOffset="0dp"
+        app:umanoScrollableView="@+id/recyclerView"
+        app:umanoShadowHeight="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/countryBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="100dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/de_not_connected"/>
+
+            <View
+                android:id="@+id/topBlurView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignTop="@+id/favouriteServerContainer"
+                android:background="@drawable/shape_half_transparent_transparent_blur"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/middleBlurView"
+                android:layout_below="@+id/topBlurView"
+                android:background="@color/blurTransparent"/>
+
+            <View
+                android:id="@+id/middleBlurView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_above="@+id/bottomBlurView"
+                android:background="@drawable/shape_white_half_transparent_blur"/>
+
+            <View
+                android:id="@+id/bottomBlurView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/mainWhite"/>
+
+            <RelativeLayout
+                android:id="@+id/favouriteServerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="223dp">
+
+                <ImageView
+                    android:id="@+id/previousCountry"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:padding="13dp"
+                    android:rotation="180"
+                    android:src="@drawable/ic_chevron"
+                    android:visibility="invisible"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/favoriteCardViewContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="24dp"
+                    android:layout_toStartOf="@+id/nextCountry"
+                    android:layout_toEndOf="@+id/previousCountry"
+                    app:cardBackgroundColor="@color/mainWhite"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/favouriteCountryImage"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@color/notConnectedCountry"
+                            app:civ_border_color="@color/notConnectedCountry"
+                            app:civ_border_width="2dp"/>
+
+                        <TextView
+                            android:id="@+id/favouriteCountryName"
+                            fontPath="fonts/roboto_medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:ellipsize="marquee"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColor="@color/mainBlack"
+                            android:textSize="16sp"
+                            tools:text="U.S. Pennsylvania 14 "/>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/nextCountry"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:padding="13dp"
+                    android:src="@drawable/ic_chevron"
+                    android:visibility="invisible"
+                    tools:visibility="visible"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/slidingContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/recyclerViewContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:background="@color/mainBackground">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingTop="16dp"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbars="vertical"
+                    tools:itemCount="33"/>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/slidingServerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="-5dp"
+                    app:cardBackgroundColor="@color/mainWhite"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="4dp">
+
+                    <include
+                        layout="@layout/element_server"/>
+
+                </android.support.v7.widget.CardView>
+
+                <Button
+                    android:id="@+id/connectDisconnectButton"
+                    style="@style/AppButton"
+                    fontPath="fonts/roboto_bold.ttf"
+                    android:background="@drawable/background_button_bottom_rounded"
+                    android:backgroundTint="@color/buttonGreen"
+                    android:text="@string/connect"
+                    android:textColor="@color/mainWhite"/>
+
+                <Button
+                    android:id="@+id/showAllServers"
+                    style="@style/AppButton"
+                    fontPath="fonts/roboto_bold.ttf"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/mainWhite"
+                    android:text="@string/allServers"
+                    android:textColor="@color/mainColor"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</LinearLayout>

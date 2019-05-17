@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gradientEnd">#B42121</color>
+    <color name="gradientStart">#C53232</color>
+    <color name="mainColor">#C53232</color>
+    <color name="darkerMainColor">#A01010</color>
+    <color name="mainBackground">#F2F2F2</color>
+    <color name="buttonRed">#C53232</color>
+    <color name="buttonOrange">#FFAB00</color>
+    <color name="switchGray">#B3BAC5</color>
+    <color name="mainBlack">#172B4D</color>
+    <color name="popupOfferText">#505F79</color>
+    <color name="mainWhite">#FFFFFF</color>
+    <color name="hintColor">#97A0AF</color>
+    <color name="landColor">#DFE1E6</color>
+    <color name="mainGray">#7A869A</color>
+    <color name="buttonGreen">#2CC532</color>
+    <color name="popupBackground">#F4F5F7</color>
+    <color name="popupText">#6C798F</color>
+    <color name="dividerColor">#66ffffff</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="blurTransparent">#c6ffffff</color>
+    <color name="menuItemPressed">#33ffffff</color>
+    <color name="popupContainerBackground">#c6ffffff</color>
+    <color name="notConnectedCountry">#7A869A</color>
+    <color name="connectingCountry">#FFAB00</color>
+    <color name="connectedCountry">#2CC532</color>
+</resources>

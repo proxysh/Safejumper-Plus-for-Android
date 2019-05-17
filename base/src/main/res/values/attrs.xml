@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleIndicators">
+        <attr name="selectedColor" format="color"/>
+        <attr name="unselectedColor" format="color"/>
+        <attr name="indicatorsMargin" format="dimension"/>
+        <attr name="indicatorsSize" format="dimension"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+// Fabric
+apply plugin: 'io.fabric'
+
+android {
+
+    signingConfigs {
+        signing_conf {
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.proxy.sh.safejumper.plus"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 3
+        versionName "1.0.1"
+
+    }
+    buildTypes {
+        debug {
+//            ndk { abiFilters "x86", "x86_64", "armeabi-v7a", "arm64-v8a"}
+            applicationIdSuffix ".beta"
+            manifestPlaceholders = [
+                    applicationLabel: "@string/app_name"
+            ]
+            buildConfigField "String", "ENDPOINT", "\"https://api.proxy.sh/v2/\""
+            buildConfigField "String", "userServerList", "\"public/access\""
+            buildConfigField "String", "publicServerList", "\"public/servers\""
+            buildConfigField "String", "login", "\"public/account_info\""
+            buildConfigField "String", "showNow", "\"https://proxy.sh/prices\""
+            buildConfigField "String", "manageAccount", "\"https://proxy.sh/panel\""
+            buildConfigField "String", "contactUs", "\"https://proxy.sh/contact\""
+            buildConfigField "String", "configUri", "\"public/config\""
+
+            buildConfigField "String", "hubsUri", "\"https://api.proxy.sh/v2/public/hubs\""
+
+            buildConfigField "int", "serverListAPI", "0"
+            buildConfigField "String", "BASIC_AUTH_USERNAME", "\"43EE4DD8071ECC6C7F2D92F343FB3CEA\""
+            buildConfigField "String", "BASIC_AUTH_PASSWORD", "\"43EE4DD8071ECC6C7F2D92F343FB3CEA\""
+            buildConfigField "boolean", "useUsername", "true"
+        }
+        release {
+//            ndk { abiFilters "x86", "x86_64", "armeabi-v7a", "arm64-v8a"}
+            manifestPlaceholders = [
+                    applicationLabel: "@string/app_name"
+            ]
+            buildConfigField "String", "ENDPOINT", "\"https://api.proxy.sh/v2/\""
+            buildConfigField "String", "userServerList", "\"public/access\""
+            buildConfigField "String", "publicServerList", "\"public/servers\""
+            buildConfigField "String", "login", "\"public/account_info\""
+            buildConfigField "String", "showNow", "\"https://proxy.sh/prices\""
+            buildConfigField "String", "manageAccount", "\"https://proxy.sh/panel\""
+            buildConfigField "String", "contactUs", "\"https://proxy.sh/contact\""
+            buildConfigField "String", "configUri", "\"public/config\""
+
+            buildConfigField "String", "hubsUri", "\"https://api.proxy.sh/v2/public/hubs\""
+
+            buildConfigField "int", "serverListAPI", "0"
+            buildConfigField "String", "BASIC_AUTH_USERNAME", "\"43EE4DD8071ECC6C7F2D92F343FB3CEA\""
+            buildConfigField "String", "BASIC_AUTH_PASSWORD", "\"43EE4DD8071ECC6C7F2D92F343FB3CEA\""
+            buildConfigField "boolean", "useUsername", "true"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':base')
+    //    implementation 'com.google.firebase:firebase-core:16.0.7'
+    //    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+    //    compile('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
+    //        transitive = true
+    //    }
+}
+apply plugin: 'com.google.gms.google-services'

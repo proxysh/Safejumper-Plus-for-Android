@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="26dp"
+    android:height="26dp"
+    android:viewportWidth="26"
+    android:viewportHeight="26">
+  <path
+      android:pathData="M20.6364,22.2575L20.6364,21.4447C20.6364,20.2698 20.0069,19.1855 18.9869,18.6029L15.4753,16.5935"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:fillType="evenOdd"/>
+  <path
+      android:pathData="M10.5204,16.5913L7.0131,18.6029C5.9931,19.1855 5.3636,20.2698 5.3636,21.4447L5.3636,22.2575"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:fillType="evenOdd"/>
+  <path
+      android:pathData="M13,17.3636C10.5902,17.3636 8.6364,15.4098 8.6364,13L8.6364,10.8182C8.6364,8.4084 10.5902,6.4545 13,6.4545C15.4098,6.4545 17.3636,8.4084 17.3636,10.8182L17.3636,13C17.3636,15.4098 15.4098,17.3636 13,17.3636Z"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:fillType="evenOdd"
+      android:strokeLineCap="square"/>
+  <path
+      android:pathData="M13,13m-12,0a12,12 0,1 1,24 0a12,12 0,1 1,-24 0"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:fillType="evenOdd"
+      android:strokeLineCap="square"/>
+</vector>

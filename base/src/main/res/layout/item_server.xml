@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/mainBackground"
+    tools:ignore="MissingPrefix">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/headCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/mainWhite"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp">
+
+        <include
+            layout="@layout/element_server"/>
+
+    </android.support.v7.widget.CardView>
+
+    <com.github.aakira.expandablelayout.ExpandableLinearLayout
+        android:id="@+id/expandableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headCardView"
+        android:layout_marginTop="-13dp"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        app:ael_expanded="false"
+        tools:ael_expanded="true">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/mainWhite"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/popupBackground"/>
+
+                <RelativeLayout
+                    android:id="@+id/encryptionContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/encryptionTypeTitle"
+                        fontPath="fonts/roboto_bold.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/encryptionType"
+                        android:textAllCaps="true"
+                        android:textColor="@color/popupText"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/encryptionType"
+                        fontPath="fonts/roboto_medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/encryptionTypeTitle"
+                        tools:text="SHA1"
+                        android:textColor="@color/mainBlack"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_alignTop="@+id/encryptionType"
+                        android:layout_alignBottom="@+id/encryptionType"
+                        android:layout_alignParentEnd="true"
+                        android:rotation="90"
+                        android:src="@drawable/ic_chevron"
+                        android:tint="@color/mainGray"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/popupBackground"/>
+
+                <RelativeLayout
+                    android:id="@+id/portNoContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/portNoTitle"
+                        fontPath="fonts/roboto_bold.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/portNoServer"
+                        android:textAllCaps="true"
+                        android:textColor="@color/popupText"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/portNo"
+                        fontPath="fonts/roboto_medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/portNoTitle"
+                        tools:text="8080"
+                        android:textColor="@color/mainBlack"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_alignTop="@+id/portNo"
+                        android:layout_alignBottom="@+id/portNo"
+                        android:layout_alignParentEnd="true"
+                        android:rotation="90"
+                        android:src="@drawable/ic_chevron"
+                        android:tint="@color/mainGray"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/connectDisconnectButton"
+            style="@style/AppButton"
+            fontPath="fonts/roboto_bold.ttf"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_button_bottom_rounded"
+            android:backgroundTint="@color/buttonGreen"
+            android:text="@string/connect"
+            android:textColor="@color/mainWhite"/>
+
+    </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="13dp"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/countryImage"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@color/notConnectedCountry"
+            app:civ_border_color="@color/notConnectedCountry"
+            app:civ_border_width="3dp"
+            tools:src="@drawable/germany"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/likeIcon"
+            android:layout_toEndOf="@+id/countryImage"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/connectedStatus"
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stateNotConnectedDotText"
+                android:textAllCaps="true"
+                android:textColor="@color/buttonRed"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/countryName"
+                fontPath="fonts/roboto_bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="marquee"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textColor="@color/mainBlack"
+                android:textSize="16sp"
+                tools:text="Germany # 17"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/likeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_heart"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/popupBackground"/>
+
+    <RelativeLayout
+        android:id="@+id/serverInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/serverLoadIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_dashboard"/>
+
+        <TextView
+            android:id="@+id/serverLoadText"
+            fontPath="fonts/roboto_bold.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/serverLoadIcon"
+            android:textColor="@color/mainGray"
+            android:textSize="16sp"
+            tools:text="20%"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/pingText"
+            android:src="@drawable/ic_ping"/>
+
+        <TextView
+            android:id="@+id/pingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:text="- ms"
+            android:textColor="@color/mainGray"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
